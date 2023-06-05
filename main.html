@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="https://kit.fontawesome.com/1c8b557267.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+        
+    <div class="navbar">
+        <h2>Funktioner</h2>
+        <div class="animatedbutton">
+            <div id="home" onclick="Home()">HEM</div>
+            <div id="stock" onclick="Stock()">AKTIER</div>
+            <div id="other">ANNAT</div>
+            <div id="logout" onclick="Logout()">LOGGA UT</div>
+        </div>
+    </div>
+
+    <h1>WEBBUTVECKLING</h1>
+    <div style="width:40vw; border: 3px solid white; margin-left:30%; border-radius: 5px; margin-top: 10px; margin-bottom: 20px;"></div>
+
+    <div class="roadmap">
+        <div class="bordish" style="height:25vw; border: 1.5px solid #313e4f;"></div>
+        <i class="fa-sharp fa-regular fa-paper-plane"></i>
+        
+        <div class="bordish" style="height:25vw; border: 1.5px solid #313e4f;"></div>
+        <div class="bordish" style="height:25vw; width: 9.9vw; border-left: 2px solid #313e4f; border-top: 2px solid #313e4f; margin-left: 40%;"></div>
+        <div class="bordish" style="height:75vw; border: 1.5px solid #313e4f; margin-left: 39.6vw;"></div>
+        
+        <div class="bordish" style="height:25vw; width: 9.9vw; border-right: 2px solid #313e4f; border-top: 2px solid #313e4f; margin-left: 40%;"></div>
+        <i class="fa-sharp fa-regular fa-paper-plane"></i>
+        <div class="bordish" style="height:90vw; border: 1.5px solid #313e4f;"></div>
+        <i class="fa-sharp fa-regular fa-paper-plane"></i>
+        <div class="bordish" style="height:10vw; border: 1.5px solid #313e4f;"></div>
+        <div class="bordish" style="height:45vw; width: 13vw; border-left: 2px solid #313e4f; border-top: 2px solid #313e4f; margin-left: 36.9%;"></div>
+        <i class="fa-sharp fa-regular fa-paper-plane" style="margin-left: 36.2%"></i>
+        <div class="bordish" style="height:40vw; border: 1.5px solid #313e4f; margin-left: 36.9%"></div>
+        <div class="bordish" style="height:25vw; width: 9.9vw; border-right: 2px solid #313e4f; border-top: 2px solid #313e4f; margin-left: 36.9%;"></div>
+        <i class="fa-sharp fa-regular fa-paper-plane" style="margin-left: 46.3%"></i>
+        <div class="bordish" style="height:35vw; border: 1.5px solid #313e4f; margin-left: 46.7%"></div>
+        <i class="fa-sharp fa-regular fa-paper-plane" style="margin-left: 46.3%"></i>
+        <div class="bordish" style="height:60vw; border: 1.5px solid #313e4f; margin-left: 46.7%"></div>
+
+
+    </div>
+
+    <div style="margin-top: -155vw; margin-left: 25vw; ">
+        <div class="descbox" id="id10"><h4>Random Uppgift</h4> En början på en hemsida om apelsiner</div>
+        <button class="usebutton" onclick="UseIframe('uppgifter_backup/apelsin.html' , '#id10')">ANVÄND</button>
+        <div class="shadowdiv" ></div>
+        <iframe src="uppgifter_backup/apelsin.html" height="300vw" width="500vw" title="Iframe"></iframe>
+    </div>
+
+    <div style="margin-top: -180vw; margin-left: 25vw; ">
+        <div class="descbox" id="id9"><h4>Uppgift 9</h4> En hemsida där det svaras på webbutvecklings relaterade frågor</div>
+        <button class="usebutton" onclick="UseIframe('uppgifter_backup/frogish.html' , '#id9')">ANVÄND</button>
+        <div class="shadowdiv" ></div>
+        <iframe src="uppgifter_backup/frogish.html" height="300vw" width="500vw" title="Iframe"></iframe>
+    </div>
+
+    <div style="margin-top: -205vw; margin-left: 25vw; ">
+        <div class="descbox" id="id8"><h4>Uppgift 8</h4> En hemsida där det svaras på webbutvecklings relaterade frågor</div>
+        <button class="usebutton" onclick="UseIframe('uppgifter_backup/frogish.html' , '#id8')">ANVÄND</button>
+        <div class="shadowdiv" ></div>
+        <iframe src="uppgifter_backup/frogish.html" height="300vw" width="500vw" title="Iframe"></iframe>
+    </div>
+
+    <div style="margin-top: -240vw; margin-left: 35vw; ">
+        <div class="descbox" id="id7"><h4>Uppgift 7</h4> En hemsida där det svaras på webbutvecklings relaterade frågor</div>
+        <button class="usebutton" onclick="UseIframe('uppgifter_backup/frogish.html' , '#id7')">ANVÄND</button>
+        <div class="shadowdiv" ></div>
+        <iframe src="uppgifter_backup/frogish.html" height="300vw" width="500vw" title="Iframe"></iframe>
+    </div>
+
+    <div style="margin-top: -270vw; margin-left: 35vw; ">
+        <div class="descbox" id="id6"><h4>Uppgift 6</h4> En relativ simpel UI som bygger på responsiv teknik och styling</div>
+        <button class="usebutton" onclick="UseIframe('uppgifter_backup/responsive.html' , '#id6')">ANVÄND</button>
+        <div class="shadowdiv" ></div>
+        <iframe src="uppgifter_backup/responsive.html" height="300vw" width="500vw" title="Iframe"></iframe>
+    </div>
+
+    <div style="margin-top: -300vw; margin-left: 35vw; ">
+        <div class="descbox" id="id5"><h4>Uppgift 5</h4> En simpel meny hemsida som även länkar till en annan hemsida</div>
+        <button class="usebutton" onclick="UseIframe('uppgifter_backup/menytest.html' , '#id5')">ANVÄND</button>
+        <div class="shadowdiv" ></div>
+        <iframe src="uppgifter_backup/menytest.html" height="300vw" width="500vw" title="Iframe"></iframe>
+    </div>
+
+    <div style="margin-top: -330vw; margin-left: 35vw; ">
+        <div class="descbox" id="id4"><h4>Uppgift 4</h4> Ett simpelt javascript script för att byta färger</div>
+        <button class="usebutton" onclick="UseIframe('uppgifter_backup/javascript2.html' , '#id4')">ANVÄND</button>
+        <div class="shadowdiv" ></div>
+        <iframe src="uppgifter_backup/javascript2.html" height="300vw" width="500vw" title="Iframe"></iframe>
+    </div>
+
+    <div style="margin-top: -375vw; margin-left: 25vw; ">
+        <div class="descbox" id="id3"><h4>Uppgift 3</h4> Ett simpelt javascript script för att byta färger</div>
+        <button class="usebutton" onclick="UseIframe('uppgifter_backup/javascript.html' , '#id3')">ANVÄND</button>
+        <div class="shadowdiv" ></div>
+        <iframe src="uppgifter_backup/javascript.html" height="300vw" width="500vw" title="Iframe"></iframe>
+    </div>
+
+    <div style="margin-top: -405vw; margin-left: 25vw; ">
+        <div class="descbox" id="id1"><h4>Uppgift 2</h4> En simpel timer skriven i javascript</div>
+        <button class="usebutton" onclick="UseIframe('uppgifter_backup/timer.html' , '#id1')">ANVÄND</button>
+        <div class="shadowdiv" ></div>
+        <iframe src="uppgifter_backup/timer.html" height="300vw" width="500vw" title="Iframe"></iframe>
+    </div>
+
+    <div style="margin-top: -435vw; margin-left: 25vw;">
+        <div class="descbox" id="id2"><h4>Läxa uppgift 1</h4> Detta var en av de första uppgifterna som jag gjorder under första terminen av webbutveckling, ett form</div>
+        <button class="usebutton" onclick="UseIframe('uppgifter_backup/form.html' , '#id2')">ANVÄND</button>
+        <div class="shadowdiv" ></div>
+        <iframe src="uppgifter_backup/form.html" height="300vw" width="500vw" title="Iframe"></iframe>
+    </div>
+
+</body>
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.close{
+    width:100%;
+    height:50px;
+    background-color: rgb(33, 33, 66);
+}
+#mark{
+    color: red;
+    font-size: 35px;
+    margin-left:92vw;
+    margin-top: 7px;
+}
+
+#mark:hover{
+    color: rgb(255, 33, 33);
+    cursor: pointer;
+}
+
+#mark:active{
+    color: rgb(224, 36, 36);
+    cursor: pointer;
+}
+
+.ok{
+    width:10vw;
+    height: 10vw;
+    background-color: red;
+}
+
+.usebutton{
+    background-color: #1d133e;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+    border: 0px solid #2b224a;
+    padding: 3px;
+    color: rgb(100, 99, 168);
+    font-size: 1vw;
+    width:100px;
+    height:30px;
+    position: absolute;
+    margin-left: -12vw;
+    margin-top: 16vw;
+
+}
+
+.modal {
+  /* display: none; */
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0, 0, 0, 0.107); 
+}
+
+.bounce-in {
+  animation: bounce-in 0.5s;
+}
+    @keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.usebutton:hover{
+    background-color: #2b224a;
+    border: 1px solid #201937;
+    box-shadow: rgba(33, 31, 70, 0.6) 0px 2px 8px;
+    cursor: pointer;
+}
+
+.usebutton:active{
+    background-color: #2e2257;
+    border: 1px solid #221a3b;
+    box-shadow: rgba(33, 31, 70, 0.6) 0px 1px 1px;
+    cursor: pointer;
+}
+
+.descbox{
+    width:40vw; color:white;
+    height:7vw;
+    padding:10px;
+    font-size: 1.3vw;
+    border-radius: 3px;
+    background-color: #191f30;
+    margin-left: -20vw;
+    margin-top: 7vw;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 29px 0px;
+    z-index: 4;
+}
+
+iframe{
+    width:33vw;
+    height:20vw;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 29px 0px;
+    position: absolute;
+    z-index: 2;
+}
+
+.big{
+    width: 80vw;
+    height: 90vw;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 29px 0px;
+}
+
+.shadowdiv{
+    width: 33vw;
+    height: 20vw;
+    box-shadow: inset 30px 0px 30px 20px rgba(0, 0, 0, 0.459);
+    position: absolute;
+    margin-top: 0vw;
+    z-index: 3;
+}
+
+
+h1{
+    font-size: 7vw;
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+
+}
+
+body{
+    font-family: Roboto;
+    background-color: #141a22;
+    caret-color: transparent;
+}
+
+.navbar{
+    width:100%;
+    height:80px;
+    background-color: #1b232f;
+    color: white;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.44) 0px 3px 8px;
+}
+h2{
+    font-size: 30px;
+}
+.animatedbutton{
+    margin-top: -30px;
+    margin-left: 175px;
+    font-size: 25px;
+}
+
+#home{
+    cursor: pointer;
+}
+
+#stock{
+    margin-top: -30px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+#other{
+    margin-top: -30px;
+    margin-left: 225px;
+    cursor: pointer;
+}
+
+#logout{
+    margin-top: -30px;
+    margin-left: 350px;
+    cursor: pointer;
+}
+
+.roadmap{
+    margin: auto;
+}
+
+
+
+.bordish{
+    width:0;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+}
+
+i{
+    color: #2c4972;
+    font-size: 20px;
+    margin: auto;
+    margin-left: 49.3%;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+</style>
+<script>
+
+    function UseIframe(content, id) {
+        var input = 
+        '<div class="modal">'+
+            '<div class="bounce-in">'+
+                '<div class="close"><i class="fa-regular fa-circle-xmark" id="mark"></i>'+
+                    '<iframe src="' + content + '" height="900vw" width="900vw" class="big" title="Iframe"></iframe>'+
+                '</div>'+
+        '</div>'+
+       '</div>';
+        $(id).append(input);
+
+        var btn = document.getElementById("mark");
+        btn.onclick = function() {
+            $(".modal").remove();
+        }
+    }
+
+    function Home(){
+        window.location.href = "main.html";
+    }
+
+    function Stock(){
+        window.location.href = "stocks.html";
+    }
+
+    function Logout(){
+        window.location.href = "index.html";
+    }
+</script>
+</html>

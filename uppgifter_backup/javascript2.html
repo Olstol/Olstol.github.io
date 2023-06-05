@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <label for="fname">Nummer 1:</label><br>
+        <input type="text" id="fname" name="fname" ><br><br>
+
+        <label for="lname">Nummer 2:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+
+        <label for="fname">Nummer 3:</label><br>
+        <input type="text" id="sname" name="sname"><br><br>
+
+        <label for="fname">Nummer 4:</label><br>
+        <input type="text" id="ename" name="ename"><br><br>
+
+        <label for="fname">Nummer 5:</label><br>
+        <input type="text" id="dname" name="dname"><br><br>
+
+        <input onclick="myFunction()" type="submit" value="Submit" id="sub"><br><br><br>
+
+        <div id="hidden">
+            <p>Totala Summan av alla värden blev: </p>
+            <p id="result"></p>
+            <p>Alla värden sorterade: </p>
+            <p id="sortedElement"></p>
+        </div>
+
+        <label for="fname">Fyll i Namn:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        <input onclick="handleName()" type="submit" value="Submit" id="sub">
+
+        <div id="hidden2">
+            <p>Antal bokstäver i namnet: </p>
+            <p id="amountLetters"></p>
+            <p>Första Bokstaven i namnet: </p>
+            <p id="firstLetter"></p>
+        </div>
+    </div>
+
+
+</body>
+<style>
+
+    body{
+        background-color: white;
+    }
+    #hidden{
+        margin-top: 20px;
+        width:160px;
+        border: solid 1px;
+        display: none;
+        padding:20px;
+    }
+
+    #hidden2{
+        margin-top: 20px;
+        width:160px;
+        border: solid 1px;
+        display: none;
+        padding:20px;
+    }
+    body{
+        margin-left:600px;
+        margin-top: 100px;
+    }
+    #wrapper{
+        padding: 50px;
+        width:20%;
+        box-shadow: rgba(0, 0, 0, 0.267) 0px 1px 4px;
+    }
+    .space{
+        margin-top: 5px;
+    }
+    label{
+        font-family: Poppins, sans-serif;
+    }
+    #sub{
+        border: solid 1px rgb(11, 227, 11);
+        background-color: rgba(11, 227, 11, 0);
+        padding: 5px;
+    }
+    #sub:hover{
+        background-color: rgba(11, 227, 11, 0.8);
+    }
+</style>
+<script>
+
+    function myFunction() {
+        const listan = []
+        var x1 = parseInt(document.getElementById("fname").value);
+        var x2 = parseInt(document.getElementById("lname").value);
+        var x3 = parseInt(document.getElementById("sname").value);
+        var x4 = parseInt(document.getElementById("ename").value);
+        var x5 = parseInt(document.getElementById("dname").value);
+        var total = Number(x1) + Number(x2) + Number(x3) + Number(x4) + Number(x5)
+        document.getElementById("result").innerHTML = total;
+        listan.push(x1, x2, x3, x4, x5)
+        var sorted = listan.sort(function(a, b){return a-b});
+        document.getElementById("sortedElement").innerHTML = sorted;
+
+        var hide = document.getElementById("hidden");
+        hide.style.display = "block";
+    }
+
+    function handleName() {
+        var str = document.getElementById("name").value;
+        var antal = 0
+        for (var i = 0; i < str.length; i++) {
+            antal = antal + 1
+        }
+        document.getElementById("amountLetters").innerHTML = antal;
+        document.getElementById("firstLetter").innerHTML = str.charAt(0).toUpperCase();
+
+        var hide = document.getElementById("hidden2");
+        hide.style.display = "block";
+    }
+</script>
+</html>

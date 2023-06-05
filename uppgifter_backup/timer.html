@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="bod">
+        <label for="fname">Inputish:</label><br>
+        <input type="number" id="ninput" name="ninput" ><br>
+
+        <button onclick="StartTimer()">Start Knappish</button>
+
+        <button onclick="StoppaTimer()">Stopp Knappish</button>
+
+        <div id="wrapper">
+        </div>
+    </div>
+</body>
+
+<style>
+
+
+    #ninput{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        height:25px;
+        width:450px;
+        font-family: Poppins, sans-serif;
+    }
+    label{
+        color: white;
+        font-family: Poppins, sans-serif;
+        font-size: 20px;
+    }
+
+    button{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        height:40px;
+        width: 125px;
+        margin-top: 25px;
+        background-color: rgb(67, 54, 101);
+        border: 1px solid rgb(40, 30, 63);
+        color: white;
+        font-family: Poppins, sans-serif;
+
+        overflow: hidden;
+        position: relative;
+    }
+
+    button .ripple {
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.7);
+        position: absolute;
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+    }
+
+    @keyframes ripple {
+        to {
+            transform: scale(2.5);
+            opacity: 0;
+        }
+    }
+
+    button:hover{
+        background-color: rgb(40, 30, 63);;
+    }
+
+    #wrapper{
+        margin-top: 20px;
+        width:430px;
+        border: 2px solid rgb(68, 58, 96);
+        padding: 10px;
+        color: white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    #bod{
+        width: 30vw;
+        height:40vw;
+        border: 1px solid;
+        margin: auto;
+        margin-top: 50px;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 10px;
+        background-color: rgb(57, 47, 74);
+    }
+
+    body{
+        background-color: rgb(26, 24, 30);
+    }
+</style>
+
+<script>
+    var x;
+    let list = [];
+    var lastdidgit;
+    var multi;
+    let timer;
+
+    function StartTimer(){
+        lastdidgit = document.getElementById("ninput").value;
+        timer = setInterval(TimerDouble, 1000); 
+    }
+
+
+    function TimerDouble()
+    {
+        list.push(lastdidgit);
+        document.getElementById("wrapper").innerHTML = list.join(", ");
+        lastdidgit = lastdidgit * 2;
+    }
+
+
+    function StoppaTimer(){
+        clearInterval(timer);
+    }
+
+
+    var buttons = document.getElementsByTagName('button');
+
+    Array.prototype.forEach.call(buttons, function (b) {
+        b.addEventListener('click', createRipple);
+    });
+
+    function createRipple (e) {
+        var circle = document.createElement('div');
+        this.appendChild(circle);
+
+        var d = Math.max(this.clientWidth, this.clientHeight);
+
+        circle.style.width = circle.style.height = d + 'px';
+
+        var rect = this.getBoundingClientRect();
+        circle.style.left = e.clientX - rect.left -d/3 + 'px';
+        circle.style.top = e.clientY - rect.top - d/3 + 'px';
+
+        circle.classList.add('ripple');
+    }
+</script>
+</html>

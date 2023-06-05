@@ -1,0 +1,100 @@
+@font-face {
+    font-family: Forsvarsmakten;
+    src: url('ForsvarsmaktenSansStencil.ttf');
+}
+  
+
+
+#main-container{
+    width:400px;
+    height: 600px;
+    border: solid 2px;
+    margin: auto;
+    padding: 15px;
+    background-color: rgb(53, 53, 53);
+    border-radius: 10px;
+    border: solid 1px;
+    margin-top: 40px;
+    box-shadow: rgba(0, 0, 0, 0.488) 0px 3px 8px;
+}
+
+body {
+    background-color: rgba(104, 104, 104, 0.675);
+}
+
+h1{
+    text-align: center;
+    color: rgb(220, 220, 220);
+    font-style: italic;
+    font-size: 35px;
+    /* font-family: Forsvarsmakten; */
+
+}
+
+#highalert {
+    color: red;
+    font-weight: bold;
+}
+
+#ämne {
+    margin-bottom: 30px;
+}
+
+#prio{
+    margin-bottom: 30px;   
+}
+
+#button{
+    margin-top: 10px;
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+    margin-left: 125px;
+    border-radius: 5px;
+    background-color: rgba(10, 225, 10, 0.812);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    border: none;
+
+}
+
+#button:hover { 
+    box-shadow: rgba(0, 0, 0, 0.484) 0px 3px 8px;
+    background-color: rgba(22, 255, 22, 0.812);
+    cursor: grab;
+}
+
+#button:active {
+    box-shadow: rgba(0, 0, 0, 0.484) 0px 2px 4px 0px inset;
+}
+
+#textfield {
+    width: 350px;
+    height: 25px;
+    color: aliceblue;
+}
+
+#text1 {
+    width: 360px;
+}
+
+legend {
+    font-weight: bold;
+    color: rgb(0, 255, 89);
+    text-shadow: 1px 1px 2px rgba(20, 195, 87), 0 0 1em rgba(20, 195, 87), 0 0 0.1em rgba(20, 195, 87);
+}
+
+fieldset {
+    background-color: rgba(40, 40, 40, 0.827);
+}
+
+label {
+    color: white;
+}
+
+input, textarea { 
+    color: aliceblue;
+    background-color: rgba(66, 66, 66, 0.827);
+}
+

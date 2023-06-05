@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="wrapper">
+        Hej
+        <button onmouseover="document.getElementById('wrapper').style.backgroundColor = 'green'"  onmouseout="document.getElementById('wrapper').style.backgroundColor = 'white'">Knappish</button>
+
+        <button onclick="changecolor()">Change Colorish</button>
+
+        <div id="rutish">
+
+            <button onclick="changecolormany()">Många Färgish</button>
+        </div>
+    </div>
+
+
+</body>
+<style>
+    #wrapper{
+        width: 1920px;
+        height: 1080px;
+        border: solid 1px;
+    }
+
+    #rutish{
+        border: solid 1px;
+        width:300px;
+        height: 300px;
+    }
+</style>
+<script>
+    var firstcolor = true
+    function changecolor() {
+        if (firstcolor == true) {
+            firstcolor = false
+            document.getElementById('wrapper').style.backgroundColor = 'red'
+        } else {
+            firstcolor = true;
+            document.getElementById('wrapper').style.backgroundColor = 'blue'
+        }
+    }
+
+
+
+    function changecolormany() {
+        const colores = ['red', 'blue', 'green', 'yellow', 'purple', 'pink', 'orange', 'black', 'white']
+        var random = Math.floor(Math.random() * 9);
+        var select = colores[random]
+        document.getElementById('rutish').style.backgroundColor = select
+    }
+
+</script>
+</html>

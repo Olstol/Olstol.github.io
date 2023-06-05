@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+
+    <div class="login-box">
+        <form id="formish">
+            <h2>Logga in</h2>
+          <div class="user-box">
+            <input type="text" name="" required="" id="user">
+            <label>Användarnamn</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="" required="" id="pass">
+            <label>Lösenord</label>
+          </div>
+            <a class="sub" onclick="loginFunc()">
+                Logga in
+            </a>
+
+          <a class="sub reg" onclick="registerFunc()">
+            Registrera
+          </a>
+        </form>
+    </div>
+
+</body>
+<style>
+
+    #formish{
+        display: show;
+    }
+
+    .sub{
+        width: 110px;
+        position: relative;
+        height: 35px;
+        padding: 7px;
+        border: 0px solid #525086;
+        background-color:#292850;
+        font-family: sans-serif;
+        font-size: 20px;
+        color: white;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+    }
+
+    .sub:hover{
+        box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 8px;
+        background-color: #302e61;
+    }
+    .sub:active{
+        background-color: #37356f;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px;
+
+    }
+
+    .reg{
+        margin-left: 20px;
+    }
+
+
+
+    html {
+        height: 100%;
+    }
+
+    body {
+        margin:0;
+        padding:0;
+        font-family: sans-serif;
+        background: linear-gradient(#232237, #1e1c3b);
+        overflow: hidden;
+    }
+
+    .login-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        height: 300px;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        background: #16162a;
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0,0,0,.4);
+        border-radius: 10px;
+        transition: height 2s;
+    }
+
+    .login-box h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+    }
+
+    .login-box .user-box {
+        position: relative;
+    }
+
+    .login-box .user-box input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+    }
+
+    .login-box .user-box label {
+        position: absolute;
+        top:0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        pointer-events: none;
+        transition: .5s;
+    }
+
+    .login-box .user-box input:focus ~ label,
+    .login-box .user-box input:valid ~ label {
+        top: -20px;
+        left: 0;
+        color: #6d68ca;
+        font-size: 12px;
+    }
+
+    button:hover{
+        cursor: pointer;
+    }
+    a:hover{
+        cursor: pointer;
+    }
+
+    .bounce-in {
+        animation: bounce-in 0.5s;
+    }
+        @keyframes bounce-in {
+        0% {
+            transform: scale(0);
+        }
+        50% {
+            transform: scale(1.15);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+
+    .creditcard{
+        height:185px;
+        width:325px;
+        background-color: red;
+        border-radius: 10px;
+        background: rgba(193, 212, 228, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        position: absolute;
+        top: -900px;
+        margin-left:-4px;
+    }
+
+    .space{
+        padding-top: 75px;
+    }
+
+    .cardnumber{
+        font-size: 25px;
+    }
+
+    .card-box{
+        color: white;
+        font-family: Roboto;
+        position: absolute;
+    }
+    .box1{
+        margin-top: 70px;
+        margin-left: 10px;
+    }
+    .box2{
+        margin-left: 10px;
+        margin-top: 135px;
+    }
+    .box3{
+        margin-left: 150px;
+        margin-top: 135px;
+    }
+    .box4{
+        margin-left: 250px;
+        margin-top: 135px;
+    }
+
+
+</style>
+<script>
+
+
+    function loginFunc() {
+
+        var user = document.getElementById("user").value;
+        var pass = document.getElementById("pass").value;
+
+        if (!user == ""){
+            if (user === localStorage.getItem("username")) {
+                window.alert('passed!')
+                if (pass === localStorage.getItem("password")){
+                    window.location.href = "main.html";
+                }else{
+                    alert("Lösenordet matchar inte!")
+                }
+            }else{
+                alert("Användarnamnet hittades inte!")
+            }
+        }else{
+            alert("Du har inte fyllt i något!")
+        }
+    }
+
+    function loginFunc2() {
+
+        var user = document.getElementById("user2").value;
+        var pass = document.getElementById("pass2").value;
+
+        if (!user == ""){
+            if (user === localStorage.getItem("username")) {
+                window.alert('passed!')
+                if (pass === localStorage.getItem("password")){
+                    window.location.href = "main.html";
+                }else{
+                    alert("Lösenordet matchar inte!")
+                }
+            }else{
+                alert("Användarnamnet hittades inte!")
+            }
+        }else{
+            alert("Du har inte fyllt i något!")
+        }
+    }
+
+
+    function registerFunc() {
+
+        const elements = document.querySelectorAll(".login-box");
+        elements.forEach(element => {
+            element.style.height = "400px";
+        });
+
+        const element = document.getElementById("formish");
+        element.style.display = "none";
+
+
+        setTimeout(function() {
+            var input = `
+                <form id="formish" class="re bounce-in">
+                    <h2>Registera</h2>
+                    <div class="user-box">
+                    <input id="username" type="text" name="" required="" id="user">
+                    <label>Användarnamn</label>
+                    </div>
+                    <div class="user-box">
+                    <input id="password" type="password" name="" required="" id="pass">
+                    <label>Lösenord</label>
+                    </div>
+                    <div class="user-box">
+                    <input id="password2" type="password" name="" required="" id="pass">
+                    <label>Upprepa Lösenord</label>
+                    </div>
+                    <a class="sub reg" onclick="NextStep()">
+                    Nästa
+                    </a>
+                </form>
+            `;
+
+            $(".login-box").append(input);
+        }, 2000);
+
+    }
+
+
+    function NextStep() {
+
+        var user = document.getElementById("username").value;
+        var pass = document.getElementById("password").value;
+        var pass2 = document.getElementById("password2").value;
+        localStorage.setItem("username", user);
+        localStorage.setItem("password", pass);
+
+        if (pass == pass2) {
+            const elements = document.querySelectorAll(".login-box");
+            elements.forEach(element => {
+                element.style.height = "500px";
+            });
+
+
+            $(".re").remove();
+            
+
+            setTimeout(function() {
+                var input = `
+                <div class="creditcard re" >
+                    <div class="card-box box1">Kortnummer
+                        <div class="cardnumber" id="cardnumber"></div>
+                    </div>
+
+                    <div class="card-box box2">Namn
+                        <div id="cardname"></div>
+                    </div>
+
+                    <div class="card-box box3">Datum
+                        <div id="carddate"></div>
+                    </div>
+
+                    <div class="card-box box4">CVC
+                        <div id="cardcvc"></div>
+                    </div>          
+                </div>
+
+                `;
+                    
+                $(".login-box").append(input);
+                $(".creditcard").animate({top: '-100px'}, 1500, 'swing');
+
+            }, 500); 
+
+
+            setTimeout(function() {
+                var input = `
+                    <form id="formish" class="bounce-in space re">
+                        <div class="creditinfo">
+                            <h2>Kort Information</h2>
+                            <div class="user-box">
+                                <input type="text" name="" required=""  id="card">
+                                <label>Kortnummer</label>
+                            </div>
+                            <div class="user-box">
+                                <input type="text" name="" required=""  id="name">
+                                <label>Namn</label>
+                            </div>
+                            <div class="user-box">
+                                <input type="text" name="" required="" id="date">
+                                <label>Utgångdatum</label>
+                            </div>
+                            <div class="user-box">
+                                <input type="text" name="" required="" id="cvc">
+                                <label>CVC</label>
+                            </div>
+                            <a class="sub reg" onclick="BackToLogin()">
+                            Nästa
+                            </a>
+                        </div>
+                    </form>
+                `;
+                    
+                $(".login-box").append(input);
+
+                const inputcard = document.getElementById("card");
+                const outputcard = document.getElementById("cardnumber");
+                inputcard.addEventListener("input", function() {
+                    outputcard.textContent = inputcard.value;
+                });
+
+                const inputname = document.getElementById("name");
+                const outputname = document.getElementById("cardname");
+                inputname.addEventListener("input", function() {
+                    outputname.textContent = inputname.value;
+                });
+
+                const inputdate = document.getElementById("date");
+                const outputdate = document.getElementById("carddate");
+                inputdate.addEventListener("input", function() {
+                    outputdate.textContent = inputdate.value;
+                });
+
+                const inputcvc = document.getElementById("cvc");
+                const outputcvc = document.getElementById("cardcvc");
+                inputcvc.addEventListener("input", function() {
+                    outputcvc.textContent = inputcvc.value;
+                });
+
+
+            }, 500); 
+
+        } else {
+            window.alert('Lösenorden matchar inte!')
+        }
+
+    }
+
+    function BackToLogin() {
+        const elements = document.querySelectorAll(".login-box");
+        elements.forEach(element => {
+            element.style.height = "300px";
+        });
+
+        $(".re").remove();
+        var input = `
+        <form id="formish">
+            <h2>Logga in</h2>
+          <div class="user-box">
+            <input type="text" name="" required="" id="user2">
+            <label>Användarnamn</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="" required="" id="pass2">
+            <label>Lösenord</label>
+          </div>
+            <a class="sub" onclick="loginFunc2()">
+                Logga in
+            </a>
+        </form>
+
+        `;
+            
+        $(".login-box").append(input);
+    }
+</script>
+</html>
